@@ -4,7 +4,7 @@
             <img class="ordinateur" src="../assets/images/ordinateur.png"/>
             <p class="titre_texte">Votre PC sur mesure <br> à prix mini </p>
             <p>Mon compte</p>
-            <p>Panier</p>
+            <p class="panier">Panier</p>
     </div>
 </template>
 
@@ -49,19 +49,23 @@ export default {
 	}
     .divlogo{
         display: grid;
-        grid-template-columns: 20% 60% 10% 10%;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 50% 50%;
         margin-top: 10px;
         border-radius: 20px;
         /* border: 1px solid black; */
     }
     .logo{
+
+        display: flex;
         border-radius: 40px;
-        display: inline-block;
         vertical-align: middle;
         margin-left: 20px;
-        height: 100px;
+        height: 200px;
         align-self: center;
         justify-self: center;
+        grid-row-start: 1;
+        grid-row-end: 4;
     }
     .ordinateur{
         height: 200px;
@@ -81,5 +85,9 @@ export default {
         margin-bottom: auto;
         vertical-align: middle;
         justify-content: center;
+    }
+    .panier{
+        grid-column: 3;
+        grid-row: 2;
     }
 </style>

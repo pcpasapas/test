@@ -1,7 +1,7 @@
 
 <template>
     <div class="home">
-        <img class="logo" src="../assets/images/PcP.png"/>
+        <!-- <img class="logo" src="../assets/images/PcP.png"/> -->
         <section class="sect1">
             <h3>Votre Pc sur mesure monté au meilleur prix avec des pièces neuves ou d'occasion</h3>
             <img class="image" src="../assets/images/pcgamertitre.jpg">
@@ -28,12 +28,11 @@ export default {
 .home{
     display: grid;
     height: auto;
-    grid-template-columns: 20% 80%;
+
     grid-template-rows: 1fr 1fr 1fr;
 }
 .sect{
     height: auto;
-    grid-column-start: 2;
     display: block;
 }
 .sect1{

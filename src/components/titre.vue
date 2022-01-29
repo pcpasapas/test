@@ -66,7 +66,7 @@ li {
 .menuUl {
     list-style-type: none;
     border-radius: 20px;
-    background-color: var(--bleu);
+    background-color:rgba(184, 201, 248, 0.842);
     justify-content: space-around;
     display: flex;
     margin-top: 20px

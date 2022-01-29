@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Licorice&family=Shizuru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+:root {
+    --bleu: rgb(62, 176, 180);
+    --bleufonce: rgb(71, 8, 243);
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+.div {
+    display: flex;
+}
+
+#depannage {
+    display: none;
+}
+
+p {
+    user-select: none;
+}
+
+li {
+    user-select: none;
+}
+
+.page {
+    display: none;
+    /* grid-template-columns: 90% 10%;
+    /* grid-template-rows: 20% 80%; */
+    grid-template-areas: "haut" "composants";
+    width: 100%;
+}
+
+.hautGauche {
+    grid-area: haut;
+    justify-content: center;
+}
+
+.droite {
+    grid-area: droite;
+}
+
+
+/* LISTE DES COMPOSANTS  */
+
+.composants {
+    list-style-type: none;
+    grid-area: composants;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    text-align: center;
+}
+
+
+/* COMPOSANT BOITIER ALIMENTATION ... */
+
+.composant {
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--bleu);
+    margin: 10px;
+    padding: 10px;
+    width: 10%;
+    height: 50px;
+    align-content: center;
+    justify-content: center;
+    transition: transform 0.5s;
+}
+
+.composant:hover {
+    background-color: var(--bleufonce);
+    transform: scale(1.05);
+}
+
+
+/* TEXTE DU COMPOSANT QU ON A CHOISI DANS LA LISTE  */
+
+.composant_choisi {
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #008000;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+
+/* NAV COMPOSANT BOITIER */
+
+.menuacache {
+    display: none;
+}
+
+
+/* MENU CACHE CHOIX BOITIER */
+
+.choixMenu {
+    justify-content: space-between;
+    border-radius: 20%;
+    align-content: center;
+    justify-items: center;
+    /* border: 1px solid black; */
+    margin: 10px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    /* background-color: cadetblue; */
+}
+
+
+/* MENU CACHE ALIMENTATION */
+
+#alimentations {
+    pointer-events: none;
+    background-color: grey;
+}
+
+
+/* PANIER */
+
+.panier {
+    border: 1px solid black;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.ulpanier {
+    display: grid;
+    display: grid;
+    grid-template-columns: "50% 50%";
+}
+
+.lipanier {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.prix,
+.prix_label {
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: grid;
+}
+
+.image {
+    display: grid;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-area: "image";
+}
+
+.choixMenuTest {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* .cache{
+    display:none;
+} */
+
+.label {
+    height: 50px;
+    margin-top: 30px;
+    background-color: cadetblue;
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.menuEnListe {
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    text-align: center;
+    border-radius: 20px;
+    list-style-type: none;
+    background-color: white;
+    max-width: 300px;
+    min-width: 150px;
+    min-height: 100px;
+    width: 22%;
+    display: grid;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    transition: opacity 1.2s;
+    /* flex-direction: column; */
+}
+
+.imageEtPrix {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.resultat_deux,
+.resultat,
+.resultat_trois,
+.resultat_quatre {
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    grid-template-columns: 60% 10% 30%;
+}
+
+.prix_composant {
+    display: inline-block;
+    justify-content: center;
+    margin: auto;
+}
+
+.prix_label {
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    max-width: 400px;
+    min-height: 20px;
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+}
+
+.result {
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    list-style-type: none;
+    background-color: white;
+    min-height: 150px;
+    width: 30%;
+    text-align: center;
+}
+
+.menuEnListe :target {
+    display: block;
+}
+
+h3 {
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 2px 5px;
+}
+
+.menuEnListe:hover {
+    transform: scale(1.1);
+}

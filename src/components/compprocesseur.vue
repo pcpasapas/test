@@ -13,11 +13,23 @@
 <script>
 
 const menusproc = [
+    {
+        id: 55, 
+        id_supp:4,
+        text_prog: "",
+        text:"Intel Core i3 Processeur Graphique intégré",
+        graphique:"oui",
+        prix:150,
+        socket:"lga1200",
+        img: require("../assets/images/inteli3.jpg")
+    }
+    ,
     { 
         id: 51,
         id_supp:4,
         text_prog: "", 
         text:"Intel Core i3 minimum 3,7 GHz",
+        graphique:"non",
         prix:110,
         img: require("../assets/images/inteli3.jpg")
     },
@@ -26,6 +38,7 @@ const menusproc = [
         id_supp:4,
         text_prog: "",
         text:"Intel Core i5 minimum 2,9 GHz",
+        graphique:"non",
         prix:180, 
         img: require("../assets/images/inteli5.jpg")
     },
@@ -34,6 +47,7 @@ const menusproc = [
         id_supp:4,
         text_prog: "",
         text:"Intel Core i5 minimum 3,5 GHz",
+        graphique:"non",
         prix:250,
         socket:"lga1151",
         img: require("../assets/images/inteli5.jpg")
@@ -43,6 +57,7 @@ const menusproc = [
         id_supp:4,
         text_prog: "",
         text:"AMD Ryzen 5 minimum 3,9 GHz",
+        graphique:"non",
         prix:265,
         img: require("../assets/images/amdryzen5.jpg")
     },

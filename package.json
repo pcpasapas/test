@@ -6,7 +6,9 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "eslint .",
-        "eslint": "eslint . --fix"
+        "eslint": "eslint . --fix",
+        "git": "npm run build && git add . && git commit -m",
+        "postgit": "git push && git subtree push --prefix dist origin gh-pages"
     },
     "dependencies": {
         "@types/json5": "^2.2.0",

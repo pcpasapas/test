@@ -6,10 +6,12 @@
         <compprocesseur v-if ="this.$store.state.processeurchoisistore === ''"></compprocesseur>
         <compcartemere v-if ="this.$store.state.cartemerechoisistore === ''"></compcartemere>
         <compssd v-if ="this.$store.state.ssdchoisistore === ''"></compssd>
+        <compcg v-if ="this.$store.state.cgchoisistore ===''"></compcg>
     </div>
 </template>
 
 <script>
+import compcg from '../components/compcg.vue'
 import comppanier from '../components/comppanier.vue'
 import compprocesseur from "../components/compprocesseur.vue"
 import compcartemere from "../components/compcartemere.vue"
@@ -49,7 +51,8 @@ export default {
     compboitier,
     compalim,
     compssd,
-    comppanier
+    comppanier,
+    compcg
   }
 }
 </script>

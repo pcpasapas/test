@@ -28,6 +28,11 @@
                 <p class="prix" v-if="this.$store.state.ssdchoisistore.prix != null"> {{ this.$store.state.ssdchoisistore.prix }} €</p>
                 <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
             </li>
+            <li class="lipanier" v-if ="this.$store.state.cgchoisistore != ''" @click="cgEnleve()">
+                <p>{{ this.$store.state.cgchoisistore.text }}</p>
+                <p class="prix" v-if="this.$store.state.cgchoisistore.prix != null"> {{ this.$store.state.cgchoisistore.prix }} €</p>
+                <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
+            </li>
             
             <h3>
             Prix Total = {{ this.$store.state.prixtotalstore }} €</h3>
@@ -56,6 +61,9 @@
             </li>
             <li class="liconfig">
             <img v-if="this.$store.state.ssdchoisistore != ''" class="imageconfigbouge" :src= this.$store.state.ssdchoisistore.img>
+            </li>
+            <li class="liconfig">
+            <img v-if="this.$store.state.cgchoisistore != ''" class="imageconfigbouge" :src= this.$store.state.cgchoisistore.img>
             </li>
             </ul>
            </li>
@@ -109,6 +117,10 @@ export default {
         cartemereEnleve() { 
         this.$store.state.prixtotalstore = this.$store.state.prixtotalstore-parseFloat(this.$store.state.cartemerechoisistore.prix)
         this.$store.state.cartemerechoisistore=''
+        },
+        cgEnleve() { 
+        this.$store.state.prixtotalstore = this.$store.state.prixtotalstore-parseFloat(this.$store.state.cgchoisistore.prix)
+        this.$store.state.cgchoisistore=''
         },
 
     }

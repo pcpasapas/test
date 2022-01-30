@@ -3,6 +3,7 @@
             <h4> "Choississez votre processeur, il sera sans doute le composant le plus cher mais aussi le plus important de votre config" </h4>
             <ul class=menuUl1>
             <li class="menuli1" v-for="(item) in menusproc_" @click="processeurok(item)">{{ item.text }}
+            <p>{{item.socket}}</p>
             <p class="prix" v-if="item.prix != null"> {{ item.prix }} €</p>
             <img v-if="item.img != ''" class="image" :src= item.img>
             </li>

@@ -10,6 +10,7 @@ const store = createStore({
             ssdchoisistore: "",
             cartemerechoisistore: "",
             prixtotalstore: 0,
+            cgchoisistore: "",
         }
     },
     mutations: {
@@ -28,6 +29,9 @@ const store = createStore({
         UPDATE_CARTE_MERE(state, payload) {
             state.cartemerechoisistore = payload
         },
+        UPDATE_CG(state, payload) {
+            state.cgchoisistore = payload
+        },
         UPDATE_PRIX(state, payload) {
             state.prixtotalstore += payload
         },
@@ -37,7 +41,8 @@ const store = createStore({
                 state.prixtotalstore = 0,
                 state.processeurchoisistore = "",
                 state.ssdchoisistore = "",
-                state.alimchoisistore = ""
+                state.alimchoisistore = "",
+                state.cgchoisistore = ""
         }
     },
     actions: {

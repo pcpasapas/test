@@ -59,6 +59,7 @@ import menusboitier from '../components/compboitier.vue'
 import menusalim from '../components/compalim.vue'
 import menusssd from '../components/compssd.vue'
 import menuscartemere from '../components/compcartemere.vue'
+import menuscg from '../components/compcg.vue'
 import router from '../router'
 let tabconfig =[]
 export default {
@@ -72,7 +73,8 @@ export default {
     },
     methods: {
         changerMenus(id, index, label) {
-            console.log(id);
+            console.log("change")
+
             if (index === "composants_boitier") {
                 router.push({ name: "ComposantsView" });
             }
@@ -82,7 +84,7 @@ export default {
                     alim:"",
                     processeur:0,
                     ssd:0,
-                    cartemere:1
+                    cartemere:1,
                 }
                 this.changerpanier(tabconfig)
             }
@@ -93,8 +95,10 @@ export default {
                     alim:1,
                     processeur:3,
                     ssd:1,
-                    cartemere:0
+                    cartemere:0,
+                    cg:1,
                 }
+                console.log(menuscg.props.menuscg.default[1])
                 this.changerpanier(tabconfig)
             }
             else {
@@ -102,7 +106,7 @@ export default {
             }
         },
         changerpanier(tab) {
-            console.log()
+            
             this.$store.commit('UPDATE_BOITIER',menusboitier.props.menusboitier.default[tab.boitier])
             this.$store.commit('UPDATE_PRIX', this.$store.state.boitierchoisistore.prix)
             if(tab.alim != '') {
@@ -115,6 +119,8 @@ export default {
             this.$store.commit('UPDATE_PRIX', this.$store.state.ssdchoisistore.prix)
             this.$store.commit('UPDATE_CARTE_MERE',menuscartemere.props.menuscartemere.default[tab.cartemere])
             this.$store.commit('UPDATE_PRIX', this.$store.state.cartemerechoisistore.prix)
+            this.$store.commit('UPDATE_CG',menuscg.props.menuscg.default[1])
+            this.$store.commit('UPDATE_PRIX', this.$store.state.cgchoisistore.prix)
         }
     },
     components: {

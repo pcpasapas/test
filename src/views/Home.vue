@@ -7,11 +7,11 @@
             <img class="image" src="../assets/images/pcgamertitre.jpg">
         </section>
         <section class="sect">
-        <h3>Des solutions de dépannage adaptées à votre budget</h3>
+        <h3>Des solutions de dépannage adaptées à votre budget, récupération de données sur disque dur...</h3>
             <img class="image" src="../assets/images/depannage.jpg">
         </section>
         <section class="sect">   
-            <h3>Achat de pièces détachées neuves ou d'occasion</h3>
+            <h3>Achat et vente de pièces détachées neuves ou d'occasion</h3>
             <img class="image" src="../assets/images/piecesdetachees.png">
         </section>
     </div>

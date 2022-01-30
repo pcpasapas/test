@@ -4,7 +4,7 @@
             <router-link :to="{ name:'Home'}">
                 <li class="menuli" @click="effacepanier()">Acceuil</li>
             </router-link>
-            <li class="menuli" @click="effacepanier()" >Dépannage</li>
+            <li class="menuli" @click="effacepanier()" >Dépannage / Recupération de données</li>
             <router-link :to="{ name:'MontageView'}">
                 <li class="menuli" @click="effacepanier()">Montage PC complet</li>
             </router-link>

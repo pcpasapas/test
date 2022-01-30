@@ -1,5 +1,5 @@
 <template>
-    <div class="panier" v-if="this.$store.state.boitierchoisistore != ''">
+    <div class="panier" v-if="this.$store.state.boitierchoisistore != '' || this.$store.state.alimchoisistore !='' || this.$store.state.processeurchoisistore !=''">
         <ul class=ulpanier>
             <h3>Votre PANIER : </h3>
             <li class="lipanier" v-if ="this.$store.state.boitierchoisistore != ''" @click="boitierEnleve()">
@@ -40,7 +40,7 @@
         </ul>
         <ul class="ulconfig">
         <h3>Votre Configuration : </h3>
-            <li class="liconfig" v-if ="this.$store.state.boitierchoisistore != ''">                
+            <li class="liconfig" v-if="this.$store.state.boitierchoisistore != '' || this.$store.state.alimchoisistore !='' || this.$store.state.processeurchoisistore !=''"></li>                
             <img class="imageconfig" :src= this.$store.state.boitierchoisistore.img>
             <ul>
              <li>

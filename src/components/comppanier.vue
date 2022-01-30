@@ -40,7 +40,7 @@
         </ul>
         <ul class="ulconfig">
         <h3>Votre Configuration : </h3>
-            <li class="liconfig" v-if="this.$store.state.boitierchoisistore != '' || this.$store.state.alimchoisistore !='' || this.$store.state.processeurchoisistore !=''"></li>                
+            <li class="liconfig" v-if="this.$store.state.boitierchoisistore != '' || this.$store.state.alimchoisistore !='' || this.$store.state.processeurchoisistore !=''">               
             <img class="imageconfig" :src= this.$store.state.boitierchoisistore.img>
             <ul>
              <li>

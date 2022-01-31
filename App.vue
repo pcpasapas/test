@@ -16,12 +16,12 @@ export default {
   },
   data: (function () {
     return {
-      adsensecontent:'',
+      adsenseContent: '',
       menus: []
     }
   }),
   mounted() {
-    this.adsensecontent = document.getElementById('divadsensedisplaynone').innerHTML
+    this.adsenseContent = document.getElementById('divadsensedisplaynone').innerHTML
   },
   }
 
@@ -32,15 +32,15 @@ export default {
   <h3>Contenu modifié le 31/01 a 17:41</h3>
   <Logo_></Logo_>
   <TitreMenu></TitreMenu>
-  <div id="adgoeshere" v-html="adsensecontent"></div>
+
   <h1></h1>
 
   <!-- <router-link to='/'><button>Retour à l'acceuil</button></router-link>
   <button a @click="$router.go(-1)">Etape précédente</button> -->
   <!-- <comppanier></comppanier> -->
   <router-view></router-view>
-
-    </div>
+   </div>
+  <div id="adgoeshere" v-html="adsensecontent"></div>
 </template>
 
 <style>

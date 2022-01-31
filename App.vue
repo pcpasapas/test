@@ -40,7 +40,7 @@ export default {
   <!-- <comppanier></comppanier> -->
   <router-view></router-view>
    </div>
-  <div id="adgoeshere" v-html="adsensecontent"></div>
+  <div id="adgoeshere" v-html="adsenseContent"></div>
 </template>
 
 <style>

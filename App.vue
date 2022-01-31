@@ -25,7 +25,7 @@ export default {
 <template>
 
   <div>
-  <h3>Contenu modifié le 30/01 a 9h56</h3>
+  <h3>Contenu modifié le 31/01 a 07h00</h3>
   <Logo_></Logo_>
   <TitreMenu></TitreMenu>
     <compannonce></compannonce>

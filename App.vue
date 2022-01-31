@@ -16,19 +16,23 @@ export default {
   },
   data: (function () {
     return {
+      adsensecontent:'',
       menus: []
     }
   }),
+  mounted() {
+    this.adsensecontent = document.getElementById('divadsensedisplaynone').innerHTML
+  },
   }
 
 </script>
 <template>
 
   <div>
-  <h3>Contenu modifié le 31/01 a 07h00</h3>
+  <h3>Contenu modifié le 31/01 a 17:41</h3>
   <Logo_></Logo_>
   <TitreMenu></TitreMenu>
-    <compannonce></compannonce>
+  <div id="adgoeshere" v-html="adsensecontent"></div>
   <h1></h1>
 
   <!-- <router-link to='/'><button>Retour à l'acceuil</button></router-link>

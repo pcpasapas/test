@@ -4,7 +4,8 @@
             <ul class=menuUl1>
             <li class="menuli1" 
             v-for="(item) in menuscartemere_" 
-            @click="cartemereok(item)">{{ item.text }}
+            v-on:click="click(item,item.id)">{{ item.text }}
+            <p>{{item.socket}}</p>
             <p class="prix" v-if="item.prix != null"> {{ item.prix }} €</p>
             <img v-if="item.img != ''" class="image" :src= item.img>
             </li>
@@ -23,6 +24,7 @@ export default {
     name: 'compcartemere', 
     props: {
         id:Number,
+        processeur:"",
         menuscartemere: {
             default: menuscartemere
     }},
@@ -32,12 +34,19 @@ export default {
       }
     },
     methods: {
+
         cartemereok(item) {
-            console.log(item)
             this.$store.commit('UPDATE_CARTE_MERE',item)
             this.$store.commit('UPDATE_PRIX', item.prix)
+        },
+        click(item, item2){
+            this.cartemereok(item);
+            this.$emit('delete',item)
         }
-    }
+    },
+    updated() {
+        this.menuscartemere_ = this.menuscartemere_.filter (obj => obj.socket === this.processeur.socket);   
+    },
 }   
 </script>
 

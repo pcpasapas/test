@@ -1,40 +1,39 @@
 <template>
     <div class="panier" v-if="this.$store.state.boitierchoisistore != '' || this.$store.state.alimchoisistore !='' || this.$store.state.processeurchoisistore !=''">
         <ul class=ulpanier>
-            <h3>Votre PANIER : </h3>
+            <h3 class="non">Votre PANIER : </h3>
             <li class="lipanier" v-if ="this.$store.state.boitierchoisistore != ''" @click="boitierEnleve()">
                 <p>{{ this.$store.state.boitierchoisistore.text }}</p>
                 <p class="prix" v-if="this.$store.state.boitierchoisistore.prix != null"> {{ this.$store.state.boitierchoisistore.prix }} €</p>
                 <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
             </li>
             <li class="lipanier" v-if ="this.$store.state.alimchoisistore != ''" @click="alimEnleve()">
-                <p>{{ this.$store.state.alimchoisistore.text }}</p>
+                <p class="p">{{ this.$store.state.alimchoisistore.text }}</p>
                 <p class="prix" v-if="this.$store.state.alimchoisistore.prix != null"> {{ this.$store.state.alimchoisistore.prix }} €</p>
-
-                <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
+                <p class="enleve" style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
             </li>
             <li class="lipanier" v-if ="this.$store.state.processeurchoisistore != ''" @click="processeurEnleve()">
-                <p>{{ this.$store.state.processeurchoisistore.text }}</p>
+                <p class="p">{{ this.$store.state.processeurchoisistore.text }}</p>
                 <p class="prix" v-if="this.$store.state.processeurchoisistore.prix != null"> {{ this.$store.state.processeurchoisistore.prix }} €</p>
-                <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
+                <p class="enleve" style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
             </li>
             <li class="lipanier" v-if ="this.$store.state.cartemerechoisistore != ''" @click="cartemereEnleve()">
-                <p>{{ this.$store.state.cartemerechoisistore.text }}</p>
+                <p class="p">{{ this.$store.state.cartemerechoisistore.text }}</p>
                 <p class="prix" v-if="this.$store.state.cartemerechoisistore.prix != null"> {{ this.$store.state.cartemerechoisistore.prix }} €</p>
-                <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
+                <p class="enleve" style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
             </li>
             <li class="lipanier" v-if ="this.$store.state.ssdchoisistore != ''" @click="ssdEnleve()">
-                <p>{{ this.$store.state.ssdchoisistore.text }}</p>
+                <p class="p">{{ this.$store.state.ssdchoisistore.text }}</p>
                 <p class="prix" v-if="this.$store.state.ssdchoisistore.prix != null"> {{ this.$store.state.ssdchoisistore.prix }} €</p>
-                <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
+                <p class="enleve" style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
             </li>
             <li class="lipanier" v-if ="this.$store.state.cgchoisistore != ''" @click="cgEnleve()">
-                <p>{{ this.$store.state.cgchoisistore.text }}</p>
+                <p class="p">{{ this.$store.state.cgchoisistore.text }}</p>
                 <p class="prix" v-if="this.$store.state.cgchoisistore.prix != null"> {{ this.$store.state.cgchoisistore.prix }} €</p>
-                <p style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
+                <p class="enleve" style="color: white">Cliquez pour supprimer et choisir un autre modèle</p>
             </li>
             
-            <h3>
+            <h3 class="non">
             Prix Total = {{ this.$store.state.prixtotalstore }} €</h3>
 
         </ul>
@@ -128,6 +127,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.p{
+    margin-top:10px;
+    height: 50%;
+}
+
+.prix{
+    margin:10px;
+    height: 50%;
+}
     .panier {
     display: grid;
     grid-template-columns: 40% 60%;
@@ -137,22 +145,29 @@ export default {
     justify-content: center;
     text-align: center;
 }
+.non{
+    user-select: none;
+       background-color: white;
+
+}
 
 .ulpanier {
     display: grid;
-    grid-template-columns: "50% 50%";
+
 }
 
 .lipanier {
     width:100%;
-    height: 80px;
+    height: 100px;
     border: 1px solid black;
     border-radius: 20px;
-    margin:2px;
-    padding:10px;
     display: grid;
     grid-template-columns: 60% 40%;
+    /* grid-template-rows: 60% 40%; */
     font-size: 0.8rem;
+}
+.enleve{
+    grid-row:2
 }
 .liconfig {
     list-style-type: none;
@@ -163,6 +178,10 @@ export default {
 .ulpanier :hover {
     background-color: red;
     color: white;
+}
+.non :hover {
+   background-color: white;
+    color: black; 
 }
 .imageconfig{
     display:block;

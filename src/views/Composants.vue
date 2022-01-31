@@ -1,10 +1,24 @@
 <template>
     <div> 
         <comppanier></comppanier>           
-        <compboitier v-if ="this.$store.state.boitierchoisistore === ''"></compboitier>        
-        <compalim v-if ="this.$store.state.alimchoisistore === ''"></compalim>
-        <compprocesseur v-if ="this.$store.state.processeurchoisistore === ''"></compprocesseur>
-        <compcartemere v-if ="this.$store.state.cartemerechoisistore === ''"></compcartemere>
+        <compboitier
+        :alim=alimChoisi 
+        v-if ="this.$store.state.boitierchoisistore === ''">
+        </compboitier>        
+        <compalim 
+        v-if ="this.$store.state.alimchoisistore === ''"
+        @delete="deleteAlim">
+        </compalim>
+        <compprocesseur 
+        :cartemere=cartemereChoisi
+        v-if ="this.$store.state.processeurchoisistore === ''"
+        @delete="deleteprocesseur">
+        </compprocesseur>
+        <compcartemere 
+        :processeur=processeurChoisi
+        v-if ="this.$store.state.cartemerechoisistore === ''"
+        @delete="deletecartemere">
+        </compcartemere>
         <compssd v-if ="this.$store.state.ssdchoisistore === ''"></compssd>
         <compcg v-if ="this.$store.state.cgchoisistore ===''"></compcg>
     </div>
@@ -21,6 +35,7 @@ import compssd from '../components/compssd.vue'
 
 
 
+
 export default {
     name: 'MontageView',
     props: ['id', 'index'],
@@ -33,14 +48,22 @@ export default {
             ssdChoisi:"",
             cartemereChoisi:"",
             prixTotal:0,
-
-
+            item:"tester",
         }},
     computed: {
-
     },
     methods: {
-    },
+        deleteAlim(item) {
+            this.alimChoisi = item
+            },
+        deletecartemere(item) {
+            this.cartemereChoisi = item
+        },
+        deleteprocesseur(item) {
+            this.processeurChoisi = item
+        }
+        
+        },    
     created() {
         
     },

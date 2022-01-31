@@ -2,7 +2,7 @@
             <div>
             <h4> "Choississez votre processeur, il sera sans doute le composant le plus cher mais aussi le plus important de votre config" </h4>
             <ul class=menuUl1>
-            <li class="menuli1" v-for="(item) in menusproc_" @click="processeurok(item)">{{ item.text }}
+            <li class="menuli1" v-for="(item) in menusproc_" @click="click(item,item.id)">{{ item.text }}
             <p>{{item.socket}}</p>
             <p class="prix" v-if="item.prix != null"> {{ item.prix }} €</p>
             <img v-if="item.img != ''" class="image" :src= item.img>
@@ -21,7 +21,7 @@ const menusproc = [
         text:"Intel Core i3 Processeur Graphique intégré",
         graphique:"oui",
         prix:150,
-        socket:"lga1200",
+        socket:"intel1200",
         img: require("../assets/images/inteli3.jpg")
     }
     ,
@@ -67,6 +67,7 @@ export default {
     name: 'compprocesseur', 
     props: {
         id:Number,
+        cartemere:"",
         menusproc: {
             default: menusproc
     }},
@@ -77,11 +78,19 @@ export default {
     },
     methods: {
         processeurok(item) {
-            console.log(item)
             this.$store.commit('UPDATE_PROCESSEUR',item)
             this.$store.commit('UPDATE_PRIX', item.prix)
+        },
+        click(item, item2){
+            this.processeurok(item);
+            this.$emit('delete',item)
         }
-    }
+        
+    },
+    updated() {
+        this.menusproc_ = this.menusproc_.filter (obj => obj.socket === this.cartemere.socket);   
+    },
+        
 }   
 </script>
 

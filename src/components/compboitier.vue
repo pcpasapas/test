@@ -48,6 +48,7 @@ export default {
     name: 'compboitier', 
     props: {
         id:Number,
+        alim:"",
         menusboitier: {
             default: menusboitier
     }},
@@ -64,10 +65,11 @@ export default {
             if (item.id === 42){
                 this.$store.commit('UPDATE_ALIM',0)
             }
-            // this.$emit('boitierChoisi', {message: item})
-
         }
-    }
+    },
+    updated() {
+    this.menusboitier_ = this.menusboitier_.filter (obj => obj.alim === "non");   
+    },
 }   
 </script>
 

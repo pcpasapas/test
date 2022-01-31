@@ -2,7 +2,7 @@
             <div>
             <h4> "Choississez votre alimentation, elle transmettra l'énergie nécessaire a votre ordinateur" </h4>
             <ul class=menuUl1>
-            <li class="menuli1" v-for="(item) in menusalim_" @click="alimok(item)">{{ item.text }}
+            <li class="menuli1" v-for="(item) in menusalim_" @click="click(item, item.id)">{{ item.text }}
             <p class="prix" v-if="item.prix != null"> {{ item.prix }} €</p>
             <img v-if="item.img != ''" class="image" :src= item.img>
             </li>
@@ -30,11 +30,16 @@ export default {
       }
     },
     methods: {
-    alimok(item) {
+        alimok(item) {
             console.log(item)
             this.$store.commit('UPDATE_ALIM',item)
             this.$store.commit('UPDATE_PRIX', item.prix)
+        },
+        click(item, item2){
+            this.alimok(item);
+            this.$emit('delete',item)
         }
+
     },
     created() {
         if (this.$store.state.boitierchoisistore.alim === true ) {
